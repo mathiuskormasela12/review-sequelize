@@ -1,0 +1,4 @@
+1. npx sequelize-cli init -> untuk inisialisasi sequelize
+2. npx sequelize-cli db:create -> membuat database baru
+3. npx sequelize-cli model:generate --name User --attributes username:string,password:string -> untuk generata/init model baru
+4. npx sequelize-cli db:migrate -> untuk migrate database (membuat table base on model)
