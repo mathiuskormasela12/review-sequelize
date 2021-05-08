@@ -1,12 +1,13 @@
-// ===== Auth Routes
+// ===== Student Routes
 // import all modules
 const express = require('express')
 const upload = require('express-fileupload')
 
 // import all controllers
-const authController = require('../controllers/auth')
+const studentController = require('../controllers/student')
 
 // import all middlewares
+const studentMiddleware = require('../middlewares/student')
 const authMiddleware = require('../middlewares/auth')
 
 // init router
@@ -18,15 +19,10 @@ router.use(upload({
 }))
 
 router.post(
-  '/register',
-  authMiddleware.checkAuthForm,
-  authController.register
-)
-
-router.post(
-  '/login',
-  authMiddleware.checkAuthForm,
-  authController.login
+  '/',
+  authMiddleware.isLogin,
+  studentMiddleware.isCreateStudentValid,
+  studentController.create
 )
 
 module.exports = router

@@ -50,6 +50,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 app.use('/api/auth', require('./src/routes/auth'))
+app.use('/api/student', require('./src/routes/student'))
 
 app.listen(PORT, () => {
   console.log('Web Service running at', APP_URL)

@@ -57,7 +57,7 @@ exports.login = async (req, res) => {
         username
       }
       const token = jwt.sign(data, SECRET_KEY, {
-        expiresIn: '24h'
+        expiresIn: 60
       })
       return response(res, 200, true, 'Success to login', { token })
     }
